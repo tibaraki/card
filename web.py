@@ -31,6 +31,7 @@ def enter(userid):
 				v['userid'].append(userid)
 		if not gameid:
 			gameid = hashlib.md5(datetime.datetime.now().isoformat().encode('utf-8')).hexdigest()
+			game[gameid] = {}
 			game[gameid]['gameid'] = gameid
 			game[gameid]['userid'] = [userid]
 	return gameid
