@@ -50,7 +50,7 @@ def logout():
 def test():
 	userid = auth()
 	gameid = enter(userid)
-	return {'userid': userid,'game': game[gameid]}
+	return {'userid': userid,'game': game}
 
 @route('/')
 @route('/<filename:path>')
