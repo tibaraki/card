@@ -12,11 +12,6 @@ port = 80
 
 game = {}
 
-game_inital = {
-	"gameid": None,
-	"userid": []
-}
-
 def auth():
 	userid = request.get_cookie('userid')
 	if not userid:
@@ -36,7 +31,6 @@ def enter(userid):
 				v['userid'].append(userid)
 		if not gameid:
 			gameid = hashlib.md5(datetime.datetime.now().isoformat().encode('utf-8')).hexdigest()
-			game[gameid] = game_inital
 			game[gameid]['gameid'] = gameid
 			game[gameid]['userid'] = [userid]
 	return gameid
