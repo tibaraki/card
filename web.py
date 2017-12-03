@@ -7,7 +7,7 @@ import datetime
 
 from bottle import route, request, response
 
-hostname = 'localhost'
+hostname = '0.0.0.0'
 port = 80
 
 game = {}
