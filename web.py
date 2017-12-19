@@ -7,7 +7,7 @@ import datetime
 
 from bottle import route, request, response
 
-hostname = 'localhost'
+hostname = '0.0.0.0'
 port = 80
 
 user = {}
@@ -68,7 +68,7 @@ def progress(game_id, user_id):
     p1 = ud[list(ud.keys())[0]]
     p2 = ud[list(ud.keys())[1]]
     pw = None
-    pl = None    
+    pl = None
     if p1['next_action'] > p2['next_action']:
         pw = p1
         pl = p2
@@ -80,7 +80,7 @@ def progress(game_id, user_id):
     p1['next_action'] = ''
     p2['next_action'] = ''
     return
-    
+
 @route('/logout')
 def logout():
     response.delete_cookie('session_id')
